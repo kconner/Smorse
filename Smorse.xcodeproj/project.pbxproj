@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2C67F44B29F603BB00D7EA15 /* SmorseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F44A29F603BB00D7EA15 /* SmorseApp.swift */; };
-		2C67F44D29F603BB00D7EA15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F44C29F603BB00D7EA15 /* ContentView.swift */; };
 		2C67F44F29F603BC00D7EA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C67F44E29F603BC00D7EA15 /* Assets.xcassets */; };
 		2C67F45229F603BC00D7EA15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C67F45129F603BC00D7EA15 /* Preview Assets.xcassets */; };
 		2C67F45C29F603BC00D7EA15 /* SmorseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F45B29F603BC00D7EA15 /* SmorseTests.swift */; };
 		2C67F46629F603BC00D7EA15 /* SmorseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F46529F603BC00D7EA15 /* SmorseUITests.swift */; };
 		2C67F46829F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F46729F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift */; };
+		2C67F47529F6181700D7EA15 /* SelfSizingTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47429F6181700D7EA15 /* SelfSizingTextEditor.swift */; };
+		2C67F47729F628D000D7EA15 /* PreviewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47629F628D000D7EA15 /* PreviewState.swift */; };
+		2C67F47929F6421D00D7EA15 /* TimedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47829F6421D00D7EA15 /* TimedButton.swift */; };
+		2C67F47D29F6469900D7EA15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47C29F6469900D7EA15 /* ContentView.swift */; };
+		2C67F47F29F6488800D7EA15 /* MorseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47E29F6488800D7EA15 /* MorseCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		2C67F44729F603BB00D7EA15 /* Smorse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smorse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C67F44A29F603BB00D7EA15 /* SmorseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseApp.swift; sourceTree = "<group>"; };
-		2C67F44C29F603BB00D7EA15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C67F44E29F603BC00D7EA15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C67F45129F603BC00D7EA15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C67F45729F603BC00D7EA15 /* SmorseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmorseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,11 @@
 		2C67F46129F603BC00D7EA15 /* SmorseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmorseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C67F46529F603BC00D7EA15 /* SmorseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseUITests.swift; sourceTree = "<group>"; };
 		2C67F46729F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2C67F47429F6181700D7EA15 /* SelfSizingTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTextEditor.swift; sourceTree = "<group>"; };
+		2C67F47629F628D000D7EA15 /* PreviewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewState.swift; sourceTree = "<group>"; };
+		2C67F47829F6421D00D7EA15 /* TimedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedButton.swift; sourceTree = "<group>"; };
+		2C67F47C29F6469900D7EA15 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C67F47E29F6488800D7EA15 /* MorseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +103,13 @@
 			isa = PBXGroup;
 			children = (
 				2C67F44A29F603BB00D7EA15 /* SmorseApp.swift */,
-				2C67F44C29F603BB00D7EA15 /* ContentView.swift */,
 				2C67F44E29F603BC00D7EA15 /* Assets.xcassets */,
 				2C67F45029F603BC00D7EA15 /* Preview Content */,
+				2C67F47C29F6469900D7EA15 /* ContentView.swift */,
+				2C67F47429F6181700D7EA15 /* SelfSizingTextEditor.swift */,
+				2C67F47829F6421D00D7EA15 /* TimedButton.swift */,
+				2C67F47629F628D000D7EA15 /* PreviewState.swift */,
+				2C67F47E29F6488800D7EA15 /* MorseCharacter.swift */,
 			);
 			path = Smorse;
 			sourceTree = "<group>";
@@ -257,8 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C67F44D29F603BB00D7EA15 /* ContentView.swift in Sources */,
+				2C67F47729F628D000D7EA15 /* PreviewState.swift in Sources */,
+				2C67F47D29F6469900D7EA15 /* ContentView.swift in Sources */,
+				2C67F47F29F6488800D7EA15 /* MorseCharacter.swift in Sources */,
+				2C67F47929F6421D00D7EA15 /* TimedButton.swift in Sources */,
 				2C67F44B29F603BB00D7EA15 /* SmorseApp.swift in Sources */,
+				2C67F47529F6181700D7EA15 /* SelfSizingTextEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +435,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Smorse/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "S'morse";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,6 +464,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Smorse/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "S'morse";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
