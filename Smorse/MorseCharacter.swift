@@ -65,7 +65,7 @@ extension Collection where Element == MorseCharacter {
     
 }
 
-private let morseDictionary: [[MorseCharacter] : String] = [
+let morseDictionary: [[MorseCharacter] : String] = [
     [.dot, .dash]: "a",
     [.dash, .dot, .dot, .dot]: "b",
     [.dash, .dot, .dash, .dot]: "c",

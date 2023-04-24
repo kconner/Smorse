@@ -16,51 +16,61 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                ScrollView {
-                    SelfSizingTextEditor(value: .constant(morseString.morseText))
-                        .fontDesign(.monospaced)
-                        .font(.headline)
-                    
-                    SelfSizingTextEditor(value: .constant(morseString.latinText))
-                        .font(.title)
-                }
-                .findDisabled(true)
+        VStack {
+            ScrollView {
+                SelfSizingTextEditor(value: .constant(morseString.morseText))
+                    .fontDesign(.monospaced)
+                    .font(.headline)
                 
-                TimedButton { upDuration, downDuration in
-                    let unit: TimeInterval = 0.15
-                    
-                    if let upDuration {
-                        morseString.append(
-                            upDuration < 2 * unit
-                            ? .unitInterval
-                            : upDuration < 5 * unit
-                            ? .letterInterval
-                            : .wordInterval
-                        )
-                    }
-                    
-                    morseString.append(downDuration < unit ? .dot : .dash)
-                } label: { isTouching in
-                    Text("BOOP")
-                        .font(.title)
-                        .bold(isTouching)
-                        .dynamicTypeSize(.accessibility5)
-                        .frame(maxWidth: .infinity)
-                        .background(
-                            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                .fill(.yellow)
-                        )
-                }
+                SelfSizingTextEditor(value: .constant(morseString.latinText))
+                    .font(.title)
             }
-            .scenePadding()
+            .findDisabled(true)
+            
+            DisclosureGroup {
+                GroupBox {
+                    HalpView()
+                        .frame(maxHeight: 200)
+                }
+            } label: {
+                Text("HALP")
+                    .font(.title3)
+            }
+            
+            TimedButton { upDuration, downDuration in
+                let unit: TimeInterval = 0.15
+                
+                if let upDuration {
+                    morseString.append(
+                        upDuration < 2 * unit
+                        ? .unitInterval
+                        : upDuration < 5 * unit
+                        ? .letterInterval
+                        : .wordInterval
+                    )
+                }
+                
+                morseString.append(downDuration < unit ? .dot : .dash)
+            } label: { isTouching in
+                Text("BOOP")
+                    .font(.title)
+                    .bold(isTouching)
+                    .dynamicTypeSize(.accessibility5)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 25, style: .continuous)
+                            .fill(.yellow)
+                    )
+            }
         }
+        .scenePadding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationStack {
+            ContentView()
+        }
     }
 }
