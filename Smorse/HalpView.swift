@@ -10,25 +10,22 @@ import SwiftUI
 struct HalpView: View {
     
     var body: some View {
-        let entries = Array(morseDictionary).sorted {
-            $0.value < $1.value
-        }
-        
         ScrollView {
             VStack {
-                ForEach(entries, id: \.key) { entry in
+                ForEach(morseDictionaryEntries, id: \.0) { entry in
+                    let (key, value) = entry
+                    
                     HStack {
-                        Text(entry.value).bold()
+                        Text(value).bold()
                         + Text("  ") +
-                        Text(entry.key.flatMap { [$0, .unitInterval] }.morseText)
+                        Text(key.flatMap { [$0, .unitInterval] }.morseText)
                         
                         Spacer()
                     }
-                    .font(.title3)
+                    .font(.headline)
                     .fontDesign(.monospaced)
                 }
             }
-            .scenePadding()
         }
     }
     
