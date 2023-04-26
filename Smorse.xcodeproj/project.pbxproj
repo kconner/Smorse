@@ -19,6 +19,7 @@
 		2C67F47D29F6469900D7EA15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47C29F6469900D7EA15 /* ContentView.swift */; };
 		2C67F47F29F6488800D7EA15 /* MorseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47E29F6488800D7EA15 /* MorseCharacter.swift */; };
 		2C67F48329F65BA500D7EA15 /* HalpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F48229F65BA500D7EA15 /* HalpView.swift */; };
+		2C95A58729F8E90F00AC0479 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C95A58629F8E90F00AC0479 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		2C67F47C29F6469900D7EA15 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C67F47E29F6488800D7EA15 /* MorseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCharacter.swift; sourceTree = "<group>"; };
 		2C67F48229F65BA500D7EA15 /* HalpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalpView.swift; sourceTree = "<group>"; };
+		2C95A58629F8E90F00AC0479 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				2C67F47829F6421D00D7EA15 /* TimedButton.swift */,
 				2C67F47629F628D000D7EA15 /* PreviewState.swift */,
 				2C67F47E29F6488800D7EA15 /* MorseCharacter.swift */,
+				2C95A58629F8E90F00AC0479 /* AudioRecorder.swift */,
 			);
 			path = Smorse;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				2C67F47929F6421D00D7EA15 /* TimedButton.swift in Sources */,
 				2C67F48329F65BA500D7EA15 /* HalpView.swift in Sources */,
 				2C67F44B29F603BB00D7EA15 /* SmorseApp.swift in Sources */,
+				2C95A58729F8E90F00AC0479 /* AudioRecorder.swift in Sources */,
 				2C67F47529F6181700D7EA15 /* SelfSizingTextEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
