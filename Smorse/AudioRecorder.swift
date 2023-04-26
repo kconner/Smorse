@@ -9,10 +9,6 @@ import AVFoundation
 
 class AudioRecorder: NSObject {
     
-    let backgroundQueue = DispatchQueue(label: "com.yourappname.loudsounddetector", qos: .background)
-    
-    let semaphore = DispatchSemaphore(value: 0)
-    
     var audioRecorder: AVAudioRecorder?
     
     func setUpAudioRecorder() {
@@ -53,34 +49,34 @@ class AudioRecorder: NSObject {
 extension AudioRecorder: AVAudioRecorderDelegate {
     
     func startMonitoringLoudSounds() {
-        audioRecorder?.record()
-        monitorLoudSounds()
+        Task {
+            await monitorLoudSounds()
+        }
+    }
+
+    func monitorLoudSounds() async {
+        guard let recorder = audioRecorder else { return }
+        recorder.updateMeters()
+
+        let power = recorder.averagePower(forChannel: 0)
+        let threshold: Float = -10.0 // Adjust this value based on your requirements
+
+        if power > threshold {
+            print("Loud sound detected")
+            // Add your reaction code here
+        }
+
+        do {
+            try await Task.sleep(nanoseconds: 5_000_000) // Sleep for 5 milliseconds (0.005 seconds)
+        } catch {
+            // Task was cancelled
+            return
+        }
+        
+        // I hope we get tail recursion
+        await monitorLoudSounds()
     }
     
-    func monitorLoudSounds() {
-        backgroundQueue.async { [weak self] in
-            guard let self, let recorder = self.audioRecorder else { return }
-            recorder.updateMeters()
-
-            let power = recorder.averagePower(forChannel: 0)
-            let threshold: Float = -10.0 // Adjust this value based on your requirements
-
-            if power > threshold {
-                print("Loud sound detected")
-                // Add your reaction code here
-            }
-
-            self.semaphore.signal()
-        }
-
-        let delayTime = DispatchTime.now() + 0.01 // Adjust the delay for higher frequency sampling
-        _ = semaphore.wait(timeout: delayTime)
-        
-        if let audioRecorder, audioRecorder.isRecording {
-            monitorLoudSounds()
-        }
-    }
-
     func stopMonitoringLoudSounds() {
         audioRecorder?.stop()
     }
