@@ -15,6 +15,8 @@ struct ContentView: View {
         .dot, .unitInterval, .dot, .unitInterval, .dot, .wordInterval
     ]
     
+    @State var isRecording = false
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -37,33 +39,55 @@ struct ContentView: View {
                     .font(.title3)
             }
             
-            TimedButton { upDuration, downDuration in
-                let unit: TimeInterval = 0.15
-                
-                if let upDuration {
-                    morseString.append(
-                        upDuration < 2 * unit
-                        ? .unitInterval
-                        : upDuration < 5 * unit
-                        ? .letterInterval
-                        : .wordInterval
-                    )
+            HStack {
+                Button {
+                    isRecording.toggle()
+                } label: {
+                    Image(systemName: "mic.fill")
+                        .font(.title)
+                        .foregroundColor(isRecording ? .red : .yellow)
+                        .dynamicTypeSize(.accessibility5)
+                        .padding(5)
+                        .frame(maxWidth: isRecording ? .infinity : nil)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                .fill(isRecording ? .black : .clear)
+                        )
                 }
                 
-                morseString.append(downDuration < unit ? .dot : .dash)
-            } label: { isTouching in
-                Text("BOOP")
-                    .font(.title)
-                    .bold(isTouching)
-                    .dynamicTypeSize(.accessibility5)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(.yellow)
-                    )
+                if !isRecording {
+                    TimedButton { upDuration, downDuration in
+                        let unit: TimeInterval = 0.15
+                        
+                        if let upDuration {
+                            morseString.append(
+                                upDuration < 2 * unit
+                                ? .unitInterval
+                                : upDuration < 5 * unit
+                                ? .letterInterval
+                                : .wordInterval
+                            )
+                        }
+                        
+                        morseString.append(downDuration < unit ? .dot : .dash)
+                    } label: { isTouching in
+                        Text("BOOP")
+                            .font(.title)
+                            .bold(isTouching)
+                            .dynamicTypeSize(.accessibility5)
+                            .padding(5)
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                    .fill(.yellow)
+                            )
+                    }
+                    .transition(.opacity.combined(with: .move(edge: .trailing)))
+                }
             }
         }
         .scenePadding()
+        .animation(.easeOut, value: isRecording)
     }
 }
 
