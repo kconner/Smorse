@@ -7,14 +7,16 @@
 
 import AVFoundation
 
-class AudioRecorder: NSObject {
+class AudioRecorder: NSObject, AVAudioRecorderDelegate {
     
-    var audioRecorder: AVAudioRecorder?
+    private var task: Task<Void, Never>? = nil
+    
+    private var audioRecorder: AVAudioRecorder?
     
     func setUpAudioRecorder() {
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
+            try audioSession.setCategory(.record, mode: .measurement, options: [.allowBluetooth])
             try audioSession.setActive(true)
         } catch {
             print("Error setting up audio session: \(error)")
@@ -22,16 +24,17 @@ class AudioRecorder: NSObject {
         
         let recordingSettings: [String: Any] = [
             AVFormatIDKey: Int(kAudioFormatLinearPCM),
-            AVSampleRateKey: 44100.0,
+            AVSampleRateKey: 8000.0, // As low as possible; we don't want the data
             AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            AVEncoderAudioQualityKey: AVAudioQuality.low.rawValue
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: getAudioFileURL(), settings: recordingSettings)
-            audioRecorder?.delegate = self
-            audioRecorder?.isMeteringEnabled = true
-            audioRecorder?.prepareToRecord()
+            let audioRecorder = try AVAudioRecorder(url: getAudioFileURL(), settings: recordingSettings)
+            audioRecorder.delegate = self
+            audioRecorder.isMeteringEnabled = true
+            audioRecorder.prepareToRecord()
+            self.audioRecorder = audioRecorder
         } catch {
             print("Error setting up audio recorder: \(error)")
         }
@@ -39,17 +42,18 @@ class AudioRecorder: NSObject {
     
     func getAudioFileURL() -> URL {
         let fileManager = FileManager.default
-        let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = urls[0] as URL
-        return documentsDirectory.appendingPathComponent("audio.m4a")
+        let folder = fileManager.temporaryDirectory
+        return folder.appendingPathComponent("audio.m4a")
     }
     
-}
-
-extension AudioRecorder: AVAudioRecorderDelegate {
+    // MARK: - AVAudioRecorderDelegate
     
     func startMonitoringLoudSounds() {
-        Task {
+        stopMonitoringLoudSounds()
+        
+        audioRecorder?.record()
+        
+        task = Task {
             await monitorLoudSounds()
         }
     }
@@ -78,6 +82,9 @@ extension AudioRecorder: AVAudioRecorderDelegate {
     }
     
     func stopMonitoringLoudSounds() {
+        task?.cancel()
+        task = nil
+        
         audioRecorder?.stop()
     }
     
