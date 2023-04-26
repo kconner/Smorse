@@ -11,6 +11,8 @@ class AudioRecorder: NSObject {
     
     let backgroundQueue = DispatchQueue(label: "com.yourappname.loudsounddetector", qos: .background)
     
+    let semaphore = DispatchSemaphore(value: 0)
+    
     var audioRecorder: AVAudioRecorder?
     
     func setUpAudioRecorder() {
@@ -57,7 +59,7 @@ extension AudioRecorder: AVAudioRecorderDelegate {
     
     func monitorLoudSounds() {
         backgroundQueue.async { [weak self] in
-            guard let recorder = self?.audioRecorder else { return }
+            guard let self, let recorder = self.audioRecorder else { return }
             recorder.updateMeters()
 
             let power = recorder.averagePower(forChannel: 0)
@@ -68,9 +70,14 @@ extension AudioRecorder: AVAudioRecorderDelegate {
                 // Add your reaction code here
             }
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self?.monitorLoudSounds()
-            }
+            self.semaphore.signal()
+        }
+
+        let delayTime = DispatchTime.now() + 0.01 // Adjust the delay for higher frequency sampling
+        _ = semaphore.wait(timeout: delayTime)
+        
+        if let audioRecorder, audioRecorder.isRecording {
+            monitorLoudSounds()
         }
     }
 
