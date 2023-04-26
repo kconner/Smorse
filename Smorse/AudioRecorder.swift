@@ -9,6 +9,8 @@ import AVFoundation
 
 class AudioRecorder: NSObject {
     
+    let backgroundQueue = DispatchQueue(label: "com.yourappname.loudsounddetector", qos: .background)
+    
     var audioRecorder: AVAudioRecorder?
     
     func setUpAudioRecorder() {
@@ -47,29 +49,33 @@ class AudioRecorder: NSObject {
 }
 
 extension AudioRecorder: AVAudioRecorderDelegate {
+    
     func startMonitoringLoudSounds() {
         audioRecorder?.record()
         monitorLoudSounds()
     }
-
+    
     func monitorLoudSounds() {
-        guard let recorder = audioRecorder else { return }
-        recorder.updateMeters()
+        backgroundQueue.async { [weak self] in
+            guard let recorder = self?.audioRecorder else { return }
+            recorder.updateMeters()
 
-        let power = recorder.averagePower(forChannel: 0)
-        let threshold: Float = -10.0 // Adjust this value based on your requirements
+            let power = recorder.averagePower(forChannel: 0)
+            let threshold: Float = -10.0 // Adjust this value based on your requirements
 
-        if power > threshold {
-            print("Loud sound detected")
-            // Add your reaction code here
-        }
+            if power > threshold {
+                print("Loud sound detected")
+                // Add your reaction code here
+            }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            self?.monitorLoudSounds()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self?.monitorLoudSounds()
+            }
         }
     }
 
     func stopMonitoringLoudSounds() {
         audioRecorder?.stop()
     }
+    
 }
