@@ -10,9 +10,6 @@
 		2C67F44B29F603BB00D7EA15 /* SmorseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F44A29F603BB00D7EA15 /* SmorseApp.swift */; };
 		2C67F44F29F603BC00D7EA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C67F44E29F603BC00D7EA15 /* Assets.xcassets */; };
 		2C67F45229F603BC00D7EA15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C67F45129F603BC00D7EA15 /* Preview Assets.xcassets */; };
-		2C67F45C29F603BC00D7EA15 /* SmorseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F45B29F603BC00D7EA15 /* SmorseTests.swift */; };
-		2C67F46629F603BC00D7EA15 /* SmorseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F46529F603BC00D7EA15 /* SmorseUITests.swift */; };
-		2C67F46829F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F46729F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift */; };
 		2C67F47529F6181700D7EA15 /* SelfSizingTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47429F6181700D7EA15 /* SelfSizingTextEditor.swift */; };
 		2C67F47729F628D000D7EA15 /* PreviewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47629F628D000D7EA15 /* PreviewState.swift */; };
 		2C67F47929F6421D00D7EA15 /* TimedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F47829F6421D00D7EA15 /* TimedButton.swift */; };
@@ -21,33 +18,11 @@
 		2C67F48329F65BA500D7EA15 /* HalpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F48229F65BA500D7EA15 /* HalpView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2C67F45829F603BC00D7EA15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C67F43F29F603BB00D7EA15 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C67F44629F603BB00D7EA15;
-			remoteInfo = Smorse;
-		};
-		2C67F46229F603BC00D7EA15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C67F43F29F603BB00D7EA15 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C67F44629F603BB00D7EA15;
-			remoteInfo = Smorse;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2C67F44729F603BB00D7EA15 /* Smorse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smorse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C67F44A29F603BB00D7EA15 /* SmorseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseApp.swift; sourceTree = "<group>"; };
 		2C67F44E29F603BC00D7EA15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C67F45129F603BC00D7EA15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2C67F45729F603BC00D7EA15 /* SmorseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmorseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C67F45B29F603BC00D7EA15 /* SmorseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseTests.swift; sourceTree = "<group>"; };
-		2C67F46129F603BC00D7EA15 /* SmorseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmorseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C67F46529F603BC00D7EA15 /* SmorseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseUITests.swift; sourceTree = "<group>"; };
-		2C67F46729F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmorseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2C67F47429F6181700D7EA15 /* SelfSizingTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTextEditor.swift; sourceTree = "<group>"; };
 		2C67F47629F628D000D7EA15 /* PreviewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewState.swift; sourceTree = "<group>"; };
 		2C67F47829F6421D00D7EA15 /* TimedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedButton.swift; sourceTree = "<group>"; };
@@ -64,20 +39,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C67F45429F603BC00D7EA15 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C67F45E29F603BC00D7EA15 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,8 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				2C67F44929F603BB00D7EA15 /* Smorse */,
-				2C67F45A29F603BC00D7EA15 /* SmorseTests */,
-				2C67F46429F603BC00D7EA15 /* SmorseUITests */,
 				2C67F44829F603BB00D7EA15 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,8 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				2C67F44729F603BB00D7EA15 /* Smorse.app */,
-				2C67F45729F603BC00D7EA15 /* SmorseTests.xctest */,
-				2C67F46129F603BC00D7EA15 /* SmorseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,23 +82,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2C67F45A29F603BC00D7EA15 /* SmorseTests */ = {
-			isa = PBXGroup;
-			children = (
-				2C67F45B29F603BC00D7EA15 /* SmorseTests.swift */,
-			);
-			path = SmorseTests;
-			sourceTree = "<group>";
-		};
-		2C67F46429F603BC00D7EA15 /* SmorseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2C67F46529F603BC00D7EA15 /* SmorseUITests.swift */,
-				2C67F46729F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift */,
-			);
-			path = SmorseUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,42 +102,6 @@
 			productReference = 2C67F44729F603BB00D7EA15 /* Smorse.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2C67F45629F603BC00D7EA15 /* SmorseTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C67F46E29F603BC00D7EA15 /* Build configuration list for PBXNativeTarget "SmorseTests" */;
-			buildPhases = (
-				2C67F45329F603BC00D7EA15 /* Sources */,
-				2C67F45429F603BC00D7EA15 /* Frameworks */,
-				2C67F45529F603BC00D7EA15 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2C67F45929F603BC00D7EA15 /* PBXTargetDependency */,
-			);
-			name = SmorseTests;
-			productName = SmorseTests;
-			productReference = 2C67F45729F603BC00D7EA15 /* SmorseTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2C67F46029F603BC00D7EA15 /* SmorseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C67F47129F603BC00D7EA15 /* Build configuration list for PBXNativeTarget "SmorseUITests" */;
-			buildPhases = (
-				2C67F45D29F603BC00D7EA15 /* Sources */,
-				2C67F45E29F603BC00D7EA15 /* Frameworks */,
-				2C67F45F29F603BC00D7EA15 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2C67F46329F603BC00D7EA15 /* PBXTargetDependency */,
-			);
-			name = SmorseUITests;
-			productName = SmorseUITests;
-			productReference = 2C67F46129F603BC00D7EA15 /* SmorseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,14 +114,6 @@
 				TargetAttributes = {
 					2C67F44629F603BB00D7EA15 = {
 						CreatedOnToolsVersion = 14.3;
-					};
-					2C67F45629F603BC00D7EA15 = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 2C67F44629F603BB00D7EA15;
-					};
-					2C67F46029F603BC00D7EA15 = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 2C67F44629F603BB00D7EA15;
 					};
 				};
 			};
@@ -235,8 +131,6 @@
 			projectRoot = "";
 			targets = (
 				2C67F44629F603BB00D7EA15 /* Smorse */,
-				2C67F45629F603BC00D7EA15 /* SmorseTests */,
-				2C67F46029F603BC00D7EA15 /* SmorseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,20 +142,6 @@
 			files = (
 				2C67F45229F603BC00D7EA15 /* Preview Assets.xcassets in Resources */,
 				2C67F44F29F603BC00D7EA15 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C67F45529F603BC00D7EA15 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C67F45F29F603BC00D7EA15 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,37 +162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C67F45329F603BC00D7EA15 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C67F45C29F603BC00D7EA15 /* SmorseTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C67F45D29F603BC00D7EA15 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C67F46629F603BC00D7EA15 /* SmorseUITests.swift in Sources */,
-				2C67F46829F603BC00D7EA15 /* SmorseUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2C67F45929F603BC00D7EA15 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2C67F44629F603BB00D7EA15 /* Smorse */;
-			targetProxy = 2C67F45829F603BC00D7EA15 /* PBXContainerItemProxy */;
-		};
-		2C67F46329F603BC00D7EA15 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2C67F44629F603BB00D7EA15 /* Smorse */;
-			targetProxy = 2C67F46229F603BC00D7EA15 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2C67F46929F603BC00D7EA15 /* Debug */ = {
@@ -487,78 +337,6 @@
 			};
 			name = Release;
 		};
-		2C67F46F29F603BC00D7EA15 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinconner.SmorseTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smorse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Smorse";
-			};
-			name = Debug;
-		};
-		2C67F47029F603BC00D7EA15 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinconner.SmorseTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smorse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Smorse";
-			};
-			name = Release;
-		};
-		2C67F47229F603BC00D7EA15 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinconner.SmorseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Smorse;
-			};
-			name = Debug;
-		};
-		2C67F47329F603BC00D7EA15 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinconner.SmorseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Smorse;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -576,24 +354,6 @@
 			buildConfigurations = (
 				2C67F46C29F603BC00D7EA15 /* Debug */,
 				2C67F46D29F603BC00D7EA15 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2C67F46E29F603BC00D7EA15 /* Build configuration list for PBXNativeTarget "SmorseTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C67F46F29F603BC00D7EA15 /* Debug */,
-				2C67F47029F603BC00D7EA15 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2C67F47129F603BC00D7EA15 /* Build configuration list for PBXNativeTarget "SmorseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C67F47229F603BC00D7EA15 /* Debug */,
-				2C67F47329F603BC00D7EA15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
