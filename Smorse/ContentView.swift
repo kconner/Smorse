@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @State var morseString: [MorseCharacter] = [
-        .dot, .unitInterval, .dot, .unitInterval, .dot, .letterInterval,
-        .dash, .unitInterval, .dash, .unitInterval, .dash, .letterInterval,
-        .dot, .unitInterval, .dot, .unitInterval, .dot, .wordInterval
+//        .dot, .unitInterval, .dot, .unitInterval, .dot, .letterInterval,
+//        .dash, .unitInterval, .dash, .unitInterval, .dash, .letterInterval,
+//        .dot, .unitInterval, .dot, .unitInterval, .dot, .wordInterval
     ]
     
     @State var isRecording = false
